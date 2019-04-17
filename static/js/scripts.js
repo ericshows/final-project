@@ -12,14 +12,18 @@ function clickHandlers(){
     event.preventDefault();
   }
   if (event.target.matches('.content-video a')){
-    const iFrame = document.querySelector('iframe');
+    videoSwitch()
+    event.preventDefault();
+  }
+}
+
+var videoSwitch = function () {
+  const iFrame = document.querySelector('iframe');
     const videoLinks = document.querySelectorAll('.content-video a');
     videoLinks.forEach(videoLink => videoLink.classList.remove('active'));
     event.target.classList.add('active');
     const videoToPlay = event.target.getAttribute('href');
     iFrame.setAttribute('src', videoToPlay);
-    event.preventDefault();
-  }
 }
 
 var addContent = function(data){
@@ -34,7 +38,9 @@ var addContent = function(data){
       </div>
       `
   }
-  document.querySelector('.content div').innerHTML = looped
+  if (document.querySelector('.content .blog')) {
+    document.querySelector('.content .blog').innerHTML = looped
+  }
 }
 
 var getData = function () {

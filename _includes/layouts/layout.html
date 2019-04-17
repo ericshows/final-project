@@ -4,21 +4,20 @@
 {% include components/head.html %}
 
 <body class="{{ pageClass }}">
-
-{% include components/nav.html %}
-{% include components/header.html %}
-{% include components/video.html %}
-
-<div class="content">
-
-    <h1>{{ pageTitle }}</h1>
-
-    {{ content }}
     
-</div>
-
-<script src="/static/js/scripts.js" ></script>
-
+    {% include components/nav.html %}
+    {% include components/header.html %}
+    
+    <div class="content">
+        
+        <h1>{{ pageTitle }}</h1>
+        
+        {{ content }}
+        
+    </div>
+    
+    <script src="/static/js/scripts.js" ></script>
+    
 </body>
 </html>
 
