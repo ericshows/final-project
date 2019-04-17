@@ -1,4 +1,20 @@
+const carouselLinks = document.querySelectorAll('.image-tn a');
+const carouselLinksArray = [...carouselLinks];
+const carousel = document.querySelector('figure img');
+const carouselPara = document.querySelector('figcaption');
 
+
+carouselLinksArray.forEach(carouselLink =>
+  carouselLink.addEventListener('click', runCarousel),
+);
+
+function runCarousel() {
+  const imageHref = event.target.parentNode.getAttribute('href');
+  const titleText = event.target.title;
+  carousel.setAttribute('src', imageHref);
+  carouselPara.innerHTML = titleText;
+  event.preventDefault();
+}
 
 //////
 
