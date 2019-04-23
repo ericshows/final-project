@@ -13,7 +13,7 @@
 		}
 		.active {
 			border-radius: 4px;
-			background: $link;
+			background: $med-gray;
 			color: #fff;
 			padding: 0.5rem;
 		}
@@ -26,3 +26,8 @@
   min-height: 500px;
   }
 }
+
+p {
+	padding-bottom: 1rem;
+}
+

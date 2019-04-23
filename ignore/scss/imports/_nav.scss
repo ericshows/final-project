@@ -2,7 +2,7 @@ nav ul {
   display: none;
   list-style: none;
   // NEW
-  background-color: $link;
+  background-color: $med-gray;
   @media (min-width: $break-med){
     display: flex;
     justify-content: space-around;
@@ -13,7 +13,9 @@ nav ul {
 nav li {
   padding: 1rem;
   &:hover:not(.active) {
-    background-color: lighten( $link, 10% );
+    background-color: lighten( $med-gray, 10% );
+    float: left;
+    overflow: hidden;
   }
   @media (min-width: $break-med){
     padding: 0;
@@ -36,7 +38,7 @@ nav a {
 }
 
 nav .active {
-  background-color: darken( $link, 10% );
+  background-color: darken( $med-gray, 10% );
 }
 
 nav .active a {
@@ -45,7 +47,7 @@ nav .active a {
 
 #pull {
   display: block;
-  background-color: $link;
+  background-color: $med-gray;
   padding-top: 12px;
   padding-left: 12px;
   @media (min-width: $break-med) {
