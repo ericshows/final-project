@@ -20,7 +20,8 @@ function runCarousel() {
 
 document.addEventListener('click', clickHandlers)
 
-var nyt = 'https://api.nytimes.com/svc/topstories/v2/nyregion.json?api-key=OuQiMDj0xtgzO80mtbAa4phGCAJW7GKa'
+
+var dc = 'http://api.repo.nypl.org/api/v1/items/recent.json?api-key=3y3qm22fjaovb9cw'
 
 function clickHandlers(){
   if (event.target.matches('#pull')){
@@ -50,17 +51,17 @@ var addContent = function(data){
     looped += `
       <div class="item">
         <h3>${data.results[i].title}</h3>
-        <p>${data.results[i].abstract}</p>
+        <p>${data.results[i].itemLink}</p>
       </div>
       `
   }
-  if (document.querySelector('.content .blog')) {
-    document.querySelector('.content .blog').innerHTML = looped
+  if (document.querySelector('.content .home')) {
+    document.querySelector('.content .home').innerHTML = looped
   }
 }
 
 var getData = function () {
-	fetch(nyt)
+	fetch(dc)
   .then(response => response.json())
   .then(json => addContent(json))
 }
