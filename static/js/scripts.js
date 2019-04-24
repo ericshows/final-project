@@ -21,7 +21,7 @@ function runCarousel() {
 document.addEventListener('click', clickHandlers)
 
 
-var dc = 'http://api.repo.nypl.org/api/v1/items/recent.json?api-key=3y3qm22fjaovb9cw'
+var dc = 'https://api.repo.nypl.org/api/v1/items/recent.json?api-key=3y3qm22fjaovb9cw'
 
 function clickHandlers(){
   if (event.target.matches('#pull')){
